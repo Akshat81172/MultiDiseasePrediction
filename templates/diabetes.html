@@ -1,0 +1,27 @@
+<!-- templates/diabetes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylee.css') }}">
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <h1>Diabetes Prediction Form</h1>
+            <form method="POST">
+                <input type="number" name="Pregnancies" placeholder="Pregnancies"><br>
+                <input type="number" name="Glucose" placeholder="Glucose"><br>
+                <input type="number" name="SkinThickness" placeholder="Skin Thickness"><br>
+                <input type="number" name="Insulin" placeholder="Insulin"><br>
+                <input type="number" step="any" name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function"><br>
+                <input type="submit" value="Predict" class="btn">
+            </form>
+            {% if prediction_text %}
+                <p class="result"><strong>{{ prediction_text }}</strong></p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

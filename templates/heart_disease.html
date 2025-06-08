@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+
+            <h1>Heart Disease Prediction</h1>
+            <form method="POST">
+                <input type="number" name="cp" placeholder="Chest Pain Type (cp)">
+                <input type="number" name="trestbps" placeholder="Resting Blood Pressure">
+                <input type="number" name="chol" placeholder="Cholesterol">
+                <input type="number" name="fbs" placeholder="Fasting Blood Sugar (fbs)">
+                <input type="number" name="restecg" placeholder="Resting ECG Result">
+                <input type="number" name="thalach" placeholder="Maximum Heart Rate">
+                <input type="number" name="exang" placeholder="Exercise Induced Angina (exang)">
+                <input type="number" step="any" name="oldpeak" placeholder="Oldpeak">
+                <input type="number" name="slope" placeholder="Slope of ST Segment">
+                <input type="number" name="ca" placeholder="Number of Major Vessels (ca)">
+                <input type="number" name="thal" placeholder="Thalassemia">
+                <input type="submit" value="Predict" class="btn">
+            </form>
+            {% if prediction_text %}
+                <p class="result"><strong>{{ prediction_text }}</strong></p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
